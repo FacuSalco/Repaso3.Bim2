@@ -31,14 +31,19 @@ public class PrefabCloner : MonoBehaviour
         {
             IField.readOnly = true;
 
-        int cloneAmount = int.Parse(inputCloneAmount.text);
+            int cloneAmount = int.Parse(inputCloneAmount.text);
 
-        if (counter < cloneAmount) {
+            if (counter < cloneAmount) {
             Instantiate(prefab);
             counter++;
             displayClonesLeft.text = (cloneAmount - counter).ToString();
+            }
+            else
+            {
+            displayClonesLeft.text = "No hay mas Prefabs";
+            }
         }
-        }
+        
 
         else
         {
