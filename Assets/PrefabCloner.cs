@@ -10,6 +10,7 @@ public class PrefabCloner : MonoBehaviour
     public Text inputCloneAmount;
     public int counter;
     public Text displayClonesLeft;
+    public InputField IField;
 
     void Start()
     {
@@ -25,10 +26,25 @@ public class PrefabCloner : MonoBehaviour
 
     public void ClonePrefab()
     {
-        if (counter < int.Parse(inputCloneAmount.text)) {
+
+        if (inputCloneAmount.text != "")
+        {
+            IField.readOnly = true;
+
+        int cloneAmount = int.Parse(inputCloneAmount.text);
+
+        if (counter < cloneAmount) {
             Instantiate(prefab);
             counter++;
-            displayClonesLeft.text = (int.Parse(inputCloneAmount.text) - counter).ToString();
+            displayClonesLeft.text = (cloneAmount - counter).ToString();
         }
+        }
+
+        else
+        {
+            displayClonesLeft.text = "ERROR. Ingrese un valor";
+        }
+
+        
     }
 }

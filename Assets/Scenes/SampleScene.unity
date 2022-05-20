@@ -426,6 +426,7 @@ MonoBehaviour:
   inputCloneAmount: {fileID: 1467786177}
   counter: 10
   displayClonesLeft: {fileID: 41536782}
+  IField: {fileID: 190286252}
 --- !u!4 &307111735
 Transform:
   m_ObjectHideFlags: 0
